@@ -3,7 +3,7 @@
 import argparse
 from hippocp import User
 
-parser = argparse.ArgumentParser(description='This is a script to add HCP users')
+parser = argparse.ArgumentParser(description='This is a script to add HippoCP users')
 parser.add_argument('-n', '--name', help='User name', required = True)
 parser.add_argument('-p', '--password', help='User password', required = True)
 parser.add_argument('-P', '--package', help='Package ID', required = True)
