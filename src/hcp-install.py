@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-#import postgresql
+import postgresql
 import argparse
 
 from hippocp import settings
@@ -14,8 +14,13 @@ parser.add_argument('-P', '--port', help='Database port', required=False, defaul
 args = parser.parse_args()
 
 #Check the connection
-#url = 'pq://' + u + ':' + p + '@' + h + '/' + d
-#self.db = postgresql.open(url)
+url = 'pq://' + args.user + ':' + args.password + '@' + args.host + ':' + args.port + '/' + args.database
+try:
+    db = postgresql.open(url)
+except (postgresql.exceptions.AuthenticationSpecificationError,
+        postgresql.exceptions.ClientCannotConnectError):
+    print('Invalid database data')
+    exit()
 
 #Set here the db vars on config file
 settings.set('pgsql', 'hostname', args.host)
