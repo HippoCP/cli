@@ -30,4 +30,11 @@ settings.set('pgsql', 'password', args.password)
 settings.set('pgsql', 'port', args.port)
 
 # Create user table
+q = 'CREATE TABLE users ('
+q+= '    uid integer PRIMARY KEY,'
+q+= '    name varchar(30),'
+q+= '    package integer,'
+q+= '    father integer);'
+db.execute(q)
+
 # Create packages table
