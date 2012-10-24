@@ -34,7 +34,16 @@ q = 'CREATE TABLE users ('
 q+= '    uid integer PRIMARY KEY,'
 q+= '    name varchar(30),'
 q+= '    package integer,'
-q+= '    father integer);'
+q+= '    father integer'
+q+= ');'
+
 db.execute(q)
 
 # Create packages table
+q = 'CREATE TABLE packages ('
+q+= '    id SERIAL PRIMARY KEY,'
+q+= '    name varchar(40) NOT NULL,'
+q+= '    owner integer NOT NULL'
+q+= ');'
+
+db.execute(q)
