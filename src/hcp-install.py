@@ -43,7 +43,13 @@ db.execute(q)
 q = 'CREATE TABLE packages ('
 q+= '    id SERIAL PRIMARY KEY,'
 q+= '    name varchar(40) NOT NULL,'
-q+= '    owner integer NOT NULL'
+q+= '    owner integer NOT NULL,'
+q+= '    harddisk integer NOT NULL,'
+q+= '    bandwidth integer NOT NULL,'
+q+= '    domain integer NOT NULL,'
+q+= '    subdomain integer NOT NULL,'
+q+= '    email integer NOT NULL,'
+q+= '    ftp integer NOT NULL'
 q+= ');'
 
 db.execute(q)
