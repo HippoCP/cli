@@ -53,3 +53,11 @@ q+= '    ftp integer NOT NULL'
 q+= ');'
 
 db.execute(q)
+
+# Create role table
+q = 'CREATE TABLE roles ('
+q+= '    id integer PRIMARY KEY,'
+q+= '    name varchar(30)'
+q+= ');'
+
+db.execute(q)
