@@ -61,3 +61,11 @@ q+= '    name varchar(30)'
 q+= ');'
 
 db.execute(q)
+
+# Create the permission_roles table
+q = 'CREATE TABLE permissions_roles ('
+q+= '    permission_id integer,'
+q+= '    role_id integer'
+q+= ');'
+
+db.execute(q)
