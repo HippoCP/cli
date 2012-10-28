@@ -63,7 +63,7 @@ q+= ');'
 db.execute(q)
 
 # Create the permission_roles table
-q = 'CREATE TABLE permissions_roles ('
+q = 'CREATE TABLE permission_role ('
 q+= '    permission_id integer,'
 q+= '    role_id integer'
 q+= ');'
