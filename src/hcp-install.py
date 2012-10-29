@@ -56,7 +56,7 @@ db.execute(q)
 
 # Create role table
 q = 'CREATE TABLE roles ('
-q+= '    id integer PRIMARY KEY,'
+q+= '    id SERIAL PRIMARY KEY,'
 q+= '    name varchar(30)'
 q+= ');'
 
