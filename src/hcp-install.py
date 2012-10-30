@@ -62,6 +62,14 @@ q+= ');'
 
 db.execute(q)
 
+# Create permissions table
+q = 'CREATE TABLE permissions ('
+q+= '    id SERIAL PRIMARY KEY,'
+q+= '    name varchar(30)'
+q+= ');'
+
+db.execute(q)
+
 # Create the permission_roles table
 q = 'CREATE TABLE permission_role ('
 q+= '    permission_id integer,'
