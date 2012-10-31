@@ -39,6 +39,22 @@ q+= ');'
 
 db.execute(q)
 
+# Create anagraphic table
+q = 'CREATE TABLE anagraphics ('
+q+= '    id integer PRIMARY KEY,'
+q+= '    name varchar(30),'
+q+= '    surname varchar(30),'
+q+= '    email varchar(30),'
+q+= '    address varchar(30),'
+q+= '    zip varchar(30),'
+q+= '    state varchar(30),'
+q+= '    country varchar(30),'
+q+= '    phone varchar(30),'
+q+= '    taxcode varchar(30)'
+q+= ');'
+
+db.execute(q)
+
 # Create packages table
 q = 'CREATE TABLE packages ('
 q+= '    id SERIAL PRIMARY KEY,'
