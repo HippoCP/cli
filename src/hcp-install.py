@@ -29,16 +29,6 @@ settings.set('pgsql', 'database', args.database)
 settings.set('pgsql', 'password', args.password)
 settings.set('pgsql', 'port', args.port)
 
-# Create user table
-q = 'CREATE TABLE users ('
-q+= '    uid integer PRIMARY KEY,'
-q+= '    name varchar(30),'
-q+= '    package integer,'
-q+= '    father integer'
-q+= ');'
-
-db.execute(q)
-
 # Create anagraphic table
 q = 'CREATE TABLE anagraphics ('
 q+= '    id integer PRIMARY KEY,'
@@ -51,6 +41,17 @@ q+= '    state varchar(30),'
 q+= '    country varchar(30),'
 q+= '    phone varchar(30),'
 q+= '    taxcode varchar(30)'
+q+= ');'
+
+db.execute(q)
+
+# Create user table
+q = 'CREATE TABLE users ('
+q+= '    uid integer PRIMARY KEY,'
+q+= '    name varchar(30),'
+q+= '    package_id integer,'
+q+= '    anagraphic_id integer,'
+q+= '    father_id integer'
 q+= ');'
 
 db.execute(q)
