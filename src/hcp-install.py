@@ -56,6 +56,15 @@ q+= ') ENGINE=InnoDB;'
 
 db.execute(q)
 
+q = 'ALTER TABLE users'
+q+= '    ADD CONSTRAINT FK_user_anagraphic'
+q+= '    FOREIGN KEY (anagraphic_id) REFERENCES anagraphics(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
+db.execute(q)
+
 # Create packages table
 q = 'CREATE TABLE packages ('
 q+= '    id SERIAL PRIMARY KEY,'
