@@ -29,6 +29,12 @@ settings.set('pgsql', 'database', args.database)
 settings.set('pgsql', 'password', args.password)
 settings.set('pgsql', 'port', args.port)
 
+# Clean the db if is not empty
+q = 'drop schema public cascade;'
+db.execute(q)
+q = 'create schema public;'
+db.execute(q)
+
 # Create anagraphic table
 q = 'CREATE TABLE anagraphics ('
 q+= '    id integer PRIMARY KEY,'
@@ -41,7 +47,7 @@ q+= '    state varchar(30),'
 q+= '    country varchar(30),'
 q+= '    phone varchar(30),'
 q+= '    taxcode varchar(30)'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
 
@@ -52,7 +58,7 @@ q+= '    name varchar(30),'
 q+= '    package_id integer,'
 q+= '    anagraphic_id integer,'
 q+= '    father_id integer'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
 
@@ -76,7 +82,7 @@ q+= '    domain integer NOT NULL,'
 q+= '    subdomain integer NOT NULL,'
 q+= '    email integer NOT NULL,'
 q+= '    ftp integer NOT NULL'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
 
@@ -84,7 +90,7 @@ db.execute(q)
 q = 'CREATE TABLE roles ('
 q+= '    id SERIAL PRIMARY KEY,'
 q+= '    name varchar(30)'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
 
@@ -92,7 +98,7 @@ db.execute(q)
 q = 'CREATE TABLE permissions ('
 q+= '    id SERIAL PRIMARY KEY,'
 q+= '    name varchar(30)'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
 
@@ -100,6 +106,6 @@ db.execute(q)
 q = 'CREATE TABLE permission_role ('
 q+= '    permission_id integer,'
 q+= '    role_id integer'
-q+= ') ENGINE=InnoDB;'
+q+= ');'
 
 db.execute(q)
