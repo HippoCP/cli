@@ -51,26 +51,6 @@ q+= ');'
 
 db.execute(q)
 
-# Create user table
-q = 'CREATE TABLE users ('
-q+= '    uid integer PRIMARY KEY,'
-q+= '    name varchar(30),'
-q+= '    package_id integer,'
-q+= '    anagraphic_id integer,'
-q+= '    father_id integer'
-q+= ');'
-
-db.execute(q)
-
-q = 'ALTER TABLE users'
-q+= '    ADD CONSTRAINT FK_user_anagraphic'
-q+= '    FOREIGN KEY (anagraphic_id) REFERENCES anagraphics(id)'
-q+= '    ON UPDATE CASCADE'
-q+= '    ON DELETE CASCADE'
-q+= ';'
-
-db.execute(q)
-
 # Create packages table
 q = 'CREATE TABLE packages ('
 q+= '    id SERIAL PRIMARY KEY,'
@@ -83,6 +63,36 @@ q+= '    subdomain integer NOT NULL,'
 q+= '    email integer NOT NULL,'
 q+= '    ftp integer NOT NULL'
 q+= ');'
+
+db.execute(q)
+
+# Create user table
+q = 'CREATE TABLE users ('
+q+= '    uid integer PRIMARY KEY,'
+q+= '    name varchar(30),'
+q+= '    package_id integer,'
+q+= '    anagraphic_id integer,'
+q+= '    father_id integer'
+q+= ');'
+
+db.execute(q)
+
+q = 'ALTER TABLE users'
+q+= '    ADD CONSTRAINT FK_user_package'
+q+= '    FOREIGN KEY (package_id) REFERENCES packages(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
+db.execute(q)
+
+
+q = 'ALTER TABLE users'
+q+= '    ADD CONSTRAINT FK_user_anagraphic'
+q+= '    FOREIGN KEY (anagraphic_id) REFERENCES anagraphics(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
 
 db.execute(q)
 
