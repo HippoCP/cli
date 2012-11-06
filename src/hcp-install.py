@@ -86,7 +86,6 @@ q+= ';'
 
 db.execute(q)
 
-
 q = 'ALTER TABLE users'
 q+= '    ADD CONSTRAINT FK_user_anagraphic'
 q+= '    FOREIGN KEY (anagraphic_id) REFERENCES anagraphics(id)'
