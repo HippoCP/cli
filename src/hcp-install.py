@@ -127,3 +127,12 @@ q+= '    ON DELETE CASCADE'
 q+= ';'
 
 db.execute(q)
+
+q = 'ALTER TABLE permission_role'
+q+= '    ADD CONSTRAINT FK_permission_role_role'
+q+= '    FOREIGN KEY (role_id) REFERENCES roles(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
+db.execute(q)
