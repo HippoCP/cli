@@ -136,3 +136,11 @@ q+= '    ON DELETE CASCADE'
 q+= ';'
 
 db.execute(q)
+
+# Create the permission_user table
+q = 'CREATE TABLE permission_user ('
+q+= '    permission_id integer,'
+q+= '    user_id integer'
+q+= ');'
+
+db.execute(q)
