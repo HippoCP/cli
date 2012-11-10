@@ -144,3 +144,12 @@ q+= '    user_id integer'
 q+= ');'
 
 db.execute(q)
+
+q = 'ALTER TABLE permission_user'
+q+= '    ADD CONSTRAINT FK_permission_role_permission'
+q+= '    FOREIGN KEY (permission_id) REFERENCES permissions(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
+db.execute(q)
