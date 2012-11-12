@@ -2,7 +2,7 @@
 
 import argparse
 
-from hippocp import Package
+from hippocp.models import Package
 
 parser = argparse.ArgumentParser(description='This is a script to list HippoCP packages.')
 parser.add_argument('-s', help='List system packages', action='store_true', default=True)
