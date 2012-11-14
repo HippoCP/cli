@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
-from hippocp import User
+from hippocp.models import User
 
 parser = argparse.ArgumentParser(description='This is a script to add HippoCP users')
 parser.add_argument('-n', '--name', help='User name', required = True)

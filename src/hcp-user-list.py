@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
-from hippocp import User
+from hippocp.models import User
 
 parser = argparse.ArgumentParser(description='This is a script to list HippoCP users.')
 args = parser.parse_args()
