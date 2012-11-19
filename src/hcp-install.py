@@ -103,6 +103,14 @@ q+= ');'
 
 db.execute(q)
 
+# Create role_user table
+q = 'CREATE TABLE role_user ('
+q+= '    role_id integer,'
+q+= '    user_id integer'
+q+= ');'
+
+db.execute(q)
+
 # Create permissions table
 q = 'CREATE TABLE permissions ('
 q+= '    id SERIAL PRIMARY KEY,'
