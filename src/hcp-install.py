@@ -111,6 +111,13 @@ q+= ');'
 
 db.execute(q)
 
+q = 'ALTER TABLE role_user'
+q+= '    ADD CONSTRAINT FK_role_user_role'
+q+= '    FOREIGN KEY (role_id) REFERENCES roles(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
 # Create permissions table
 q = 'CREATE TABLE permissions ('
 q+= '    id SERIAL PRIMARY KEY,'
