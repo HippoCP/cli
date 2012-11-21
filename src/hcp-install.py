@@ -118,6 +118,13 @@ q+= '    ON UPDATE CASCADE'
 q+= '    ON DELETE CASCADE'
 q+= ';'
 
+q = 'ALTER TABLE role_user'
+q+= '    ADD CONSTRAINT FK_role_user_user'
+q+= '    FOREIGN KEY (user_id) REFERENCES users(id)'
+q+= '    ON UPDATE CASCADE'
+q+= '    ON DELETE CASCADE'
+q+= ';'
+
 # Create permissions table
 q = 'CREATE TABLE permissions ('
 q+= '    id SERIAL PRIMARY KEY,'
