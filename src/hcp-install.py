@@ -178,7 +178,7 @@ db.execute(q)
 
 q = 'ALTER TABLE permission_user'
 q+= '    ADD CONSTRAINT FK_permission_user_user'
-q+= '    FOREIGN KEY (user_id) REFERENCES users(id)'
+q+= '    FOREIGN KEY (user_id) REFERENCES users(uid)'
 q+= '    ON UPDATE CASCADE'
 q+= '    ON DELETE CASCADE'
 q+= ';'
