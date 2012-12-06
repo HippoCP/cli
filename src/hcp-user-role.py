@@ -9,7 +9,7 @@ parser.add_argument('-l', '--list', help='List roles', action='store_true')
 parser.add_argument('-c', '--check', help='Check specific role', action='store_true')
 parser.add_argument('-a', '--add-role', help='Add role to the user', action='store_true')
 parser.add_argument('-d', '--remove-role', help='Remove role to the user', action='store_true')
-parser.add_argument('-r', '--role', help='Role (required for check)')
+parser.add_argument('-r', '--role', help='Role (required for check, add, remove)')
 args = parser.parse_args()
 
 if args.list is True:
